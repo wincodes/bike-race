@@ -1,0 +1,41 @@
+<!--================Photo Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+            <div class="banner_content text-center">
+                <div class="page_link">
+                    <a href="<%= root_path %>">Home</a>
+                    <a href="<%= pages_photo_path %>">Photos</a>
+                </div>
+                <h2>Photos</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<img src="<%#= @img_url.to_s %>"> 
+
+<!-- <img src="https://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg" style="height: 250px;" />  -->
+
+<%#= will_paginate @listRecent %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+        
+            <% @listRecent.each do |recent| %> 
+
+        	<!--TITLE :: <%#= get_image_info(recent.id, recent.secret).title %> 
+            	DATE TAKEN ::<%#= get_image_info(recent.id, recent.secret).dates.taken %> -->
+
+            	<img class="img-fluid img_flickr" src="<%= get_image_url(get_image_info(recent.id, recent.secret)).to_s %>" /> 
+
+            <% end %>  
+        </div>
+    </div>
+</div>
+<%# end %>
+
+<!--================Photo Area End =================-->
+ <a href="<%= root_path %>">Back</a> 

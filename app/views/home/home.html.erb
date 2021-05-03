@@ -1,0 +1,124 @@
+<!--================ Home Banner Area =================-->
+<section class="home_banner_area">
+    <div class="banner_inner">
+		<div class="container">
+			<div class="banner_content">
+				<h2>Boulder Bike <br />Tour</h2>
+				<p>Coming up in 2021!</p>
+				<a class="banner_btn" href="#">View More Details</a>
+			</div>
+		</div>
+    </div>
+</section>
+<!--================ End Home Banner Area =================-->
+
+<!--================ Event Time Area =================-->
+<section class="event_time_area">
+	<div class="container">
+		<div class="event_time_inner">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="event_text">
+						<h3>Next Event will Start in</h3>
+						<p>Time</p>
+					</div>
+				</div>
+				<div class="timer_inner" id="demo" style="width: 50%">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--================ End Event Time Area =================-->
+
+<!--================ Welcome Area =================-->
+<section class="welcome_area pad_btm">
+	<div class="container">
+		<div class="welcome_inner row">
+			<div class="col-lg-5">
+				<div class="welcome_img">
+					<img class="img-fluid" src="<%= asset_path('eventure/img/welcome-1.jpg') %>" alt="">
+				</div>
+			</div>
+			<div class="col-lg-6 offset-lg-1" style="color: white">
+				<div class="welcome_text">
+					<h3 style="color: white">Welcome to Boulder Bike Tour</h3>
+					<p>Once every decade, an exciting, prestigious, and inspiring bike race takes place in Colorado at the foot of the Rocky Mountains. It's the Boulder Bike Tour, and it's coming up in 2020!</p>
+					<a class="main_btn" href="#">View More Details</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--================ End Welcome Area =================-->
+
+<!--================ Riders Partial =================-->
+
+<%= render partial: 'layouts/front_end/riders' %>
+
+<!--================ End Riders Partial  =================-->
+
+<!--================ Map Area =================-->
+
+<%= render partial: 'layouts/front_end/map' %>
+
+<!--================ End Map Area =================-->
+
+
+<!-- 
+<a href="<%= pages_about_path %>">about</a>
+<a href="<%= pages_location_path %>">location</a>
+<a href="<%= pages_photo_path %>">photo</a>
+<a href="<%= riders_path %>">riders</a>
+<a href="<%= contest_contest_path %>">contest</a>
+-->
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("June 1, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+//   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+//   + minutes + "m " + seconds + "s ";
+  document.getElementById("demo").innerHTML = `<div id="timer" class="timer">
+		<div class="timer__section days">
+			<span >${days}</span>
+			<div class="timer__label">days</div>
+		</div>
+		<div class="timer__section hours">
+			<span > ${hours}</span>
+			<div class="timer__label">hours</div>
+		</div>
+		<div class="timer__section minutes">
+			<span > ${minutes}</span> 
+			<div class="timer__label">Minutes</div>
+		</div>
+		<div class="timer__section seconds">
+			<span >${seconds}</span> 
+			<div class="timer__label">seconds</div>
+		</div>
+	</div>`;
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron jumbotron-fluid">  
+    <div class="container">
+        <div class="row">
+          	<div class="col-sm">
+
+				<p><%= @rider.first_name %></p>
+				<p><%= @rider.last_name %></p>
+				<p><%= @rider.city_of_origin %></p>
+				<p><%= @rider.state_of_origin %></p>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_rider_path(@rider) %> |
+<%= link_to 'Back', riders_path %>

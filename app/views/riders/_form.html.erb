@@ -1,0 +1,43 @@
+<%= form_with(model: rider, local: true) do |form| %>
+  <% if rider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rider.errors.count, "error") %> prohibited this rider from being saved:</h2>
+
+      <ul>
+      <% rider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container" style="margin-top: 50px">
+    <div class="field">
+      <div class="form">
+        <p>
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name %>
+        </p>
+
+        <p>
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name %>
+        </p>
+
+        <p>
+          <%= form.label :city_of_origin %>
+          <%= form.text_field :city_of_origin %>
+        </p>
+
+        <p>
+          <%= form.label :state_of_origin %>
+          <%= form.text_field :tate_of_origin %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

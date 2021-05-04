@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'contest/index'
   get 'contest/new'
+  get 'contest/created'
   post 'contest/create'
   get 'contest/show'
   get 'contest/edit'

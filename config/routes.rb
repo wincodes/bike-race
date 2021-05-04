@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'contest/index'
+  get 'contest/new'
+  get 'contest/create'
+  get 'contest/show'
+  get 'contest/edit'
+  get 'contest/update'
+  get 'contest/destroy'
   #devise_for :contests
   #devise_for :installs
   devise_for :users, controllers: {

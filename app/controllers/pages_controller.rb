@@ -42,7 +42,8 @@ class PagesController < ApplicationController
 
 		# @img_url = FlickRaw.url_m(info)
 
-		@listRecent = flickr.photos.getRecent :per_page => 30
+		# @listRecent = flickr.photos.getRecent :per_page => 40
+		@listRecent = flickr.photos.search :per_page => 40, :page => 4, :tags => "bikerace, BoulderBikeTour"
 		#puts "list length #{@listRecent.length}"
 		#puts "list length #{@listRecent.count}"
 		#puts "list length #{@listRecent.to_json}"

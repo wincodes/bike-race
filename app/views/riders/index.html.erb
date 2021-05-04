@@ -16,30 +16,9 @@
 
 
 <!--================ End Riders Area =================-->
-<div class="container">
-  <div class="row">
-  <tbody>
-    <% @riders.each do |rider| %>
-    
-      <div class="col-3">
-        <div class="team_item">
-            <div class="team_img">
-              <img class="img-fluid" src="<%= asset_path('eventure/img/team/team-1.jpg') %>" alt="">
-            </div>
-            <h5><%= link_to rider.first_name %> <%= link_to rider.last_name %></h5>
-            <p>rider test</p>
-          <tr>
-            <td><%= link_to 'Show', rider %></td>
-            <td><%= link_to 'Edit', edit_rider_path(rider) %></td>
-            <td><%= link_to 'Destroy', rider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        </div>
-    </div>
-    <% end %>
-  </tbody>
-</div>
-</div>
 
-<%= link_to 'New Rider', new_rider_path %>
+    <%= render partial: 'layouts/front_end/riders_full' %>
+
+<%# <%= link_to 'New Rider', new_rider_path %> 
 
 <a href="<%= root_path %>">Back</a>

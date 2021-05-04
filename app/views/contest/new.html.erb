@@ -1,2 +1,42 @@
-<h1>Contest#new</h1>
-<p>Find me in app/views/contest/new.html.erb</p>
+<div class="container my-5 py-5">
+
+    <h4> Enter the Slogan Contest </h4>
+
+    <%= form_for @contest, url: contest_create_url(@contest) do |form| %>
+
+  <div class="container" style="margin-top: 50px">
+    <div class="field">
+      <div class="form">
+        <p>
+          <%= form.label :firstname %>
+          <%= form.text_field :firstname, required: true, class: "form-control w-50" %>
+        </p>
+
+        <p>
+          <%= form.label :lastname %>
+          <%= form.text_field :lastname, required: true, class: "form-control w-50" %>
+        </p>
+
+        <p>
+          <%= form.label :email %>
+          <%= form.email_field :email, required: true, class: "form-control w-50"  %>
+        </p>
+
+        <p>
+          <%= form.label :slogan %>
+          <%= form.text_field :slogan, required: true, class: "form-control w-50" %>
+        </p>
+
+        
+
+        <div class="actions w-25">
+            <%= form.submit "Submit Slogan",  class: "btn btn-lg btn-primary btn-block"  %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+</div>
